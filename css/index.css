@@ -1,0 +1,2265 @@
+@charset "utf-8";
+
+@import url(https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js);
+
+/* font-family: 'Noto Sans KR', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+.container{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+ /* top-btn */
+
+ .top-btn{
+     /* display: none; */
+     width: 50px;
+     height: 50px;
+     position: fixed;
+     bottom: 40px;
+     right: 40px;
+     z-index: 9999;
+     cursor: pointer;
+ }
+
+
+/* header-area */
+.header-area{
+    width: 80%;
+    height: 80px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(34, 34, 34, 0.507);
+    top: 5.5%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+    position: absolute;
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-area .jeep-logo{
+    width: 120px;
+    height: auto;
+    margin-right: 45px;
+}
+
+.header-area .menu{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-area .menu li{
+    display: inline-block;
+    height: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 4px solid transparent;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.header-area .menu li:hover{
+    border-bottom: 4px solid #EDAD01;
+}
+
+.menu li a{
+    font-size: 0.938rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.icon-box{
+    width: 12%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-box li{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: 0.5s;
+    position: relative;
+    transition: 0.5s;
+}
+
+.icon-box li:last-child{
+    margin-right: 0;
+}
+
+.icon-box li a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.icon-box li svg{
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+
+.icon-box li:hover{
+    border-radius: 50%;
+    background-color: #222;
+}
+
+.icon-box li:hover svg{
+    stroke: #fff;
+}
+
+#hamburger{
+    display: none;
+}
+
+
+/* sub-menu */
+.sub-menu-box{
+    position: fixed;
+    top: calc(5.5% + 80px);
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: 50%;
+    background-color: rgba(34, 34, 34, 0.729);
+    /* border: 1px solid #222; */
+    position: relative;
+    z-index: 9999;
+    display: none;
+    transition: 0.5s;
+}
+
+.sub-menu-box.active{
+    display: block;
+}
+
+.sub-menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: flex-start;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sub-menu.active{
+    opacity: 1;
+}
+
+.sub-menu li{
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+.sub-menu:first-child li:last-child{
+    margin-bottom: 0;
+}
+
+
+.sub-menu li h3{
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+.sub-menu:first-child li h3{
+    margin-top: 10px;
+}
+
+.sub-menu:nth-child(2) li h3{
+    margin-top: 25px;
+}
+
+.sub-menu:nth-child(3) li h3{
+    margin-top: 25px;
+}
+
+.sub-menu:nth-child(4) li h3{
+    margin-top: 25px;
+}
+
+.sub-menu:nth-child(5) li h3{
+    margin-top: 25px;
+}
+
+.sub-menu li p{
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+
+/* mask-slider */
+
+.mask {
+    position: absolute !important;
+    /* 수정 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85vw;
+    height: 90vh;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 9 !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* 스와이퍼 커스텀 */
+  .swiper {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+.slider{
+    width: 400%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box1{
+    width: 100%;
+    height: 100%;
+    background: url(../img/main-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}   
+
+.box2{
+    width: 100%;
+    height: 100%;
+    background: url(../img/main-banner1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}   
+
+
+.box3{
+    width: 100%;
+    height: 100%;
+    background: url(../img/main-banner2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}   
+
+.box4{
+    width: 100%;
+    height: 100%;
+    background: url(../img/main-banner3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}   
+
+.slider-mask{
+    top: 98%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    width: 40%;
+    height: 22%;
+    z-index: 99 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #222;
+    border-radius: 5px 5px 0 0;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+.slider-content-box{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;    
+
+}
+
+.box{
+    /* display: inline-block; */
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: rgba(34, 34, 34, 0.126); */
+}
+
+
+.box li{
+    /* display: inline-block; */
+    text-align: center;
+}
+
+.box li h3{
+    font-size: 1.9rem;
+    color: #fff;
+}
+
+.box li p{
+    flex-wrap: nowrap;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.btn-box{
+    width: 40%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-l{
+    display: inline-block;
+    width: 27%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.8);
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.btn-l:hover{
+    background-color: #EDAD01;
+}
+
+.btn-l a{
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.btn-r{
+    display: inline-block;
+    width: 27%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.8);
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-r:hover{
+    background-color: #EDAD01;
+}
+
+.btn-r a{
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.main-bg-mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.main-bg-slider{
+    width: 400%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-bg-slider .box1{
+    background: url(../img/main-banner_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-bg-slider .box2{
+    background: url(../img/main-banner1_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-bg-slider .box3{
+    background: url(../img/main-banner2_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-bg-slider .box4{
+    background: url(../img/main-banner3_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* arrow-btn */
+.swiper-button-prev::after{
+   color: rgba(255, 255, 255, 0.53);
+   font-size: 1rem !important;
+}
+
+.swiper-button-next::after{
+    color: rgba(255, 255, 255, 0.53);
+    font-size: 1rem !important;
+}
+
+/* section1 */
+.sec1-container{
+    width: 100vw;
+    height: 100vh;
+    padding: 70px;
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 21%);
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sec1-top-txt{
+    width: 35%;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.sec1-top-txt .inner-txt{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sec1-top-txt .inner-txt h3{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.sec1-top-txt .inner-txt p{
+    margin-top: 20px;
+    font-size: 0.825rem;
+    color: #fff;
+}
+
+/* sec-1 content */
+.jeep-service-content{
+    width: 90%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.jeep-service-inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner-box{
+    position: relative;
+    width: calc(100% / 3 - 30px);
+    height: 90%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.inner-box:last-child{
+    margin-right: 0;
+}
+.inner-box .inner-txt{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px 5px 0 0 ;
+    transition: 0.6s;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-box .inner-txt a{
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+.inner-box:hover{
+    transform: scale(1.05);
+}
+
+.inner-box:hover .inner-txt{
+    background-color: #EDAD01;
+}
+
+.inner-img1{
+    width: 100%;
+    height: 100%;
+    background: url(../img/sec1-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inner-img2{
+    width: 100%;
+    height: 100%;
+    background: url(../img/sec1-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inner-img3{
+    width: 100%;
+    height: 100%;
+    background: url(../img/sec1-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inner-img4{
+    width: 100%;
+    height: 100%;
+    background: url(../img/sec1-4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* section2 */
+.sec2-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    padding: 90px;
+    box-sizing: border-box;
+}
+
+.sec2-top-txt{
+    width: 40%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: default;
+}
+
+.sec2-top-txt .inner-txt{
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sec2-top-txt .inner-txt h3{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.sec2-top-txt .inner-txt p{
+    margin-top: 20px;
+    font-size: 0.825rem;
+    color: #fff;
+}
+
+.sec2-mask{
+    width: 100%;
+    height: 90%;
+    /* margin: 0 auto; */
+    overflow: hidden;
+    /* display: flex;
+    align-items: center; */
+    margin-top: 40px;
+}
+
+.slider-wrap-box{
+    width: 200%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auto-slider-wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.in-auto-slider{
+    width: calc(100% / 3 - 45px);
+    height: 90%;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #474747;
+    margin-right: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.171);
+    transition: 0.6s;
+}
+
+.in-auto-slider:hover{
+    transform: scale(1.05);
+    background-color: #5a5a5a;
+}
+
+
+.in-auto-slider h3{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.5s;
+    color: #fff;
+}
+
+.in-auto-slider:hover h3{
+    color: #EDAD01;
+}
+
+.in-auto-slider .sec2-img{
+    display: inline-block;
+    width: 90%;
+}
+
+.in-auto-slider p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.in-auto-slider .btn{
+    width: 40%;
+    height: 12%;
+    border-radius: 5px;
+    border: 1px solid #EDAD01;
+    background-color: transparent;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.in-auto-slider .btn:hover{
+    background-color: #EDAD01;
+}
+
+.in-auto-slider .btn a{
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.5s;
+    color: #fff;
+}
+
+/* .sec2-arrow-btn{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sec2-arrow-btn img{
+    width: 24px;
+    height: 24px;
+} */
+
+/* 버튼 */
+
+.sec2-btn{
+    text-align: center;
+}
+
+input[name="tabmenu"]{
+    display: none;
+}
+
+.sec2-btn label{
+    width: 10px;
+    height: 10px;
+    background-color: #353535;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* 수정 */
+.slider-wrap-box{
+    transition: 0.5s;
+}
+input[id="tab-1"]:checked ~ .sec2-mask .slider-wrap-box{
+   transform: translateX(0);
+}
+input[id="tab-2"]:checked ~ .sec2-mask .slider-wrap-box{
+    transform: translateX(-50%);
+}
+
+input[id="tab-1"]:checked ~ .sec2-btn label[for="tab-1"],
+input[id="tab-2"]:checked ~ .sec2-btn label[for="tab-2"]
+
+{
+    background-color: #EDAD01;
+}
+
+
+
+
+
+
+/* section3 */
+.sec3-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #353535;
+    position: relative;
+}
+
+.sec3-top-txt{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: auto;
+}
+
+.sec3-top-txt h3{
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.sec3-img-box{
+    position: absolute;
+    top: 56%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 70%;
+    height: 70%;
+    background: url(../img/jeep-camp.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.sec3-txt-mask{
+    width: 20%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 77%;
+    left: 80%;
+    transform: translate(-50%, -80%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec3-txt-box{
+    width: auto;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sec3-txt-box h3{
+    font-size: 1.7rem;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+.sec3-txt-box p{
+    font-size: 0.875rem;
+    color: #fff;
+}
+
+.sec3-txt-box button{
+    width: 55%;
+    height: 25%;
+    border: 1px solid #EDAD01;
+    background-color: transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: 0.6s;
+}
+
+.sec3-txt-box button:hover{
+    background-color: #EDAD01;
+}
+
+.sec3-txt-box button a{
+    font-size: 0.875rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+
+/* footer > 1920 */
+.footer-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.footer-wrap{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer-left{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 60px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(221, 221, 221, 0.295);
+}
+
+.footer-top-l{
+    width: 80%;
+    height: 50%;
+}
+
+.footer-top-l a{
+    width: 80%;
+}
+
+.footer-top-l .footer-top-img{
+    height: 20%;
+    object-fit: contain;
+}
+
+.footer-top-l p{
+    margin-top: 20px;
+    font-size: 0.7rem;
+    color: #5a5a5a;
+}
+
+.footer-bottom-l{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer-bottom-l input{
+    width: 100%;
+    height: 10%;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.2px solid #ddd;
+    outline: none;
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+.footer-bottom-l a{
+    color: #fff;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.295);
+    padding: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    transition: 0.6s;
+}
+
+.footer-bottom-l a:hover{
+    background-color: #5a5a5a;
+}
+
+.footer-right{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-top-r{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.295);
+}
+
+.footer-top-r h1,
+.footer-top-r p,
+.footer-top-r a{
+    color: #fff;
+}
+
+.footer-top-r h1 > a{
+    font-size: 0.95rem;
+    /* font-weight: 500; */
+}
+
+.footer-top-r p > a{
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+.f-inner-txt5 p{
+    font-size: 0.7rem;
+    /* font-weight: 400; */
+    color: rgba(255, 255, 255, 0.548);
+}
+
+.footer-bottom-r{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer-bottom-r h1,
+.footer-bottom-r p,
+.footer-bottom-r a{
+    color: #fff;
+}
+
+.footer-bottom-r h1 > a{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.footer-bottom-r p > a{
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.548);
+}
+
+.f-inner-txt9{
+    width: 211px;
+}
+
+.f-inner-txt9 h1{
+    margin-bottom: 10px;
+}
+
+.f-inner-txt9 p > img{
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+}
+
+.f-inner-txt9 a{
+    display: inline-block;
+    line-height: 24px;
+}
+
+.f-inner-txt9 p{
+    line-height: 24px;
+}
+
+.facebook-txt, 
+.instagram-txt,
+.youtube-txt{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.footer-right a{
+    display: inline-block;
+    transition: 0.5s;
+
+}
+
+.footer-right a:hover{
+    color: #fff;
+}
+
+
+
+
+/* media-1190px */
+
+@media(max-width:1190px){
+    
+ .top-btn{
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* menu-area */
+
+.header-area{
+    height: 70px;
+}
+
+nav{
+    height: 70px;
+}
+
+.header-area .jeep-logo{
+    width: 100px;
+    margin-right: 30px;
+}
+
+.header-area .menu{
+    width: 70%;
+}
+
+.menu li a{
+    font-size: 0.75rem;
+}
+
+.icon-box{
+    width: 13%;
+}
+
+.icon-box li{
+    width: 22px;
+    height: 22px;
+}
+
+.icon-box li a{
+    width: 22px;
+    height: 22px;
+}
+
+.icon-box li svg{
+    width: 22px;
+    height: 22px;
+}
+
+/* main-banner-txt-box */
+.box li h3{
+    font-size: 1.5rem;
+}
+
+.box li p{
+    font-size: 0.875rem;
+}
+
+.btn-box a{
+    font-size: 0.75rem;
+}
+
+
+.btn-l,.btn-r{
+    height: 90%;
+}
+
+
+/* jeep-service */
+
+.sec1-top-txt{
+    width: 40%;
+}
+
+.sec1-top-txt .inner-txt h3{
+    font-size: 1.75rem;
+}
+
+.sec1-top-txt .inner-txt p{
+    margin-top: 10px;
+    font-size: 0.75rem;
+}
+
+.jeep-service-content{
+    width: 95%;
+    height: 60%;
+}
+
+.inner-box{
+    width: calc(100% / 3 - 20px);
+    margin-right: 20px;
+}
+
+.inner-box .inner-txt{
+    width: 60%;
+    height: 50px;
+}
+
+.inner-box .inner-txt a{
+    font-size: 0.75rem;
+}
+
+
+/* jeep-vehicle */
+.sec2-top-txt{
+    width: 50%;
+    height: 30%;
+}
+
+.sec2-top-txt .inner-txt h3{
+    font-size: 1.75rem;
+}
+
+.sec2-top-txt .inner-txt p{
+    margin-top: 10px;
+    font-size: 0.75rem;
+}
+
+.sec2-mask{
+    width: 100%;
+    height: 90%;
+}
+
+.in-auto-slider{
+    width: calc(100% / 3 - 30px);
+    margin-right: 30px;
+}
+
+.in-auto-slider h3{
+    font-size: 1.2rem;
+}
+
+.in-auto-slider .sec2-img{
+    width: 100%;
+}
+
+.in-auto-slider p{
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.in-auto-slider .btn{
+    width: 58%;
+    height: 12%;
+}
+
+.in-auto-slider .btn a{
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+
+/* jeep-camp */
+.sec3-top-txt h3{
+    font-size: 1.75rem;
+}
+
+.sec3-txt-box h3{
+    font-size: 1.2rem;
+}
+
+.sec3-txt-box p{
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.sec3-txt-box button{
+    height: 20%;
+}
+
+.sec3-txt-box button a{
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+/* footer */
+
+.footer-left{
+    padding-right: 40px;    
+}
+
+.footer-top-l{
+    width: 100%;
+    height: 50%;
+}
+
+.footer-top-l a{
+    width: 100%;
+    height: 20px;
+    font-size: 0.75rem;
+    margin-top: 0;
+}
+
+.footer-bottom-l a{
+    font-size: 0.75rem;
+}
+
+.footer-top-r h1 > a{
+    font-size: 0.75rem;
+}
+
+.footer-top-r p > a{
+    font-size: 0.6rem;
+}
+
+.footer-bottom-r h1 > a{
+    font-size: 0.75rem;
+}
+
+.footer-bottom-r p > a{
+    font-size: 0.6rem;
+    font-weight: 300;
+}
+
+.f-inner-txt9 h1{
+    margin-bottom: 5px;
+}
+
+.f-inner-txt9 p > img{
+    margin-right: 10px;
+}
+
+.f-inner-txt9 p{
+    display: inline-block;
+}
+
+} /* 1190 */
+
+
+
+
+/* media : 959px */
+@media (max-width:959px){
+    .top-btn{
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .header-area .jeep-logo{
+        width: 90px;
+        margin-right: 20px;
+    }
+
+
+    .icon-box{
+        width: 15%;
+    }
+    
+    .icon-box li{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .icon-box li a{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .icon-box li svg{
+        width: 20px;
+        height: 20px;
+    }
+
+    /* main-banner-txt-box */
+    .box{
+        margin: 80px auto 0;
+    }
+
+    .box li h3{
+        font-size: 1.5rem;
+    }
+    
+    .box li p{
+        font-size: 0.875rem;
+    }
+    
+    .btn-box a{
+        font-size: 0.75rem;
+    }
+
+    .btn-l, .btn-r{
+        width: 35%;
+    }
+
+    /* .jeep=service */
+    .sec1-container{
+        padding: 60px;
+    }
+
+    .sec1-top-txt{
+        width: 50%;
+    }
+    
+    .sec1-top-txt .inner-txt h3{
+        font-size: 1.5rem;
+    }
+    
+    .sec1-top-txt .inner-txt p{
+        font-size: 0.75rem;
+    }
+    
+    .jeep-service-content{
+        width: 100%;
+    }
+
+    
+    .inner-box .inner-txt{
+        width: 65%;
+        height: 50px;
+    }
+    
+    .inner-box .inner-txt a{
+        font-size: 0.75rem;
+    }
+
+    /* jeep-vehicle */
+    .sec2-top-txt{
+        width: 55%;
+        height: 25%;
+    }
+
+    .sec2-top-txt .inner-txt h3{
+        font-size: 1.5rem;
+    }
+
+    .sec2-top-txt .inner-txt p{
+        font-size: 0.75rem;
+    }
+
+    .sec2-mask{
+        width: 100%;
+    }
+
+    .in-auto-slider{
+        width: calc(100% / 3 - 20px);
+        margin-right: 20px;
+    }
+
+    .in-auto-slider h3{
+        font-size: 1.2rem;
+    }
+
+    .in-auto-slider .sec2-img{
+        width: 105%;
+    }
+
+    .in-auto-slider p{
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+
+    .in-auto-slider .btn{
+        width: 70%;
+        height: 10%;
+    }
+
+    .in-auto-slider .btn a{
+        font-size: 0.75rem;
+    }
+
+    /* jeep-camp */
+
+    .sec3-img-box{
+        width: 66%;
+    }
+
+    .sec3-txt-mask{
+        width: 28%;
+    }
+    
+    .sec3-top-txt h3{
+        font-size: 1.5rem;
+    }
+    
+    .sec3-img-box{
+        background-position: right;
+    }
+
+    /* footer < 959 */
+    .footer-left{
+        width: 23%;
+        padding-right: 30px;
+    }
+
+    .footer-top-l{
+        width: 100%;
+    }
+
+    .footer-top-l{
+        width: 100%;
+    }
+
+    .footer-top-l p{
+        margin-top: 10px;
+    }
+
+    .footer-bottom-l{
+        height: 45%;
+    }
+
+    .footer-bottom-l input{
+        height: 15%;
+        padding: 20px;
+    }
+    
+    .footer-bottom-l input::placeholder{
+        font-size: 0.75rem;
+    }
+
+    .footer-bottom-l a{
+        padding: 15px;
+    }
+
+    .footer-right{
+        width: 70%;
+    }
+
+    .footer-bottom-r{
+        width: 100%;
+    }
+
+    .footer-top-r h1 > a{
+        font-size: 0.65rem;
+    }
+
+    .footer-top-r p > a{
+        font-size: 0.5rem;
+    }
+    
+
+    .footer-bottom-r h1 > a{
+        font-size: 0.65rem;
+    }
+
+    .footer-bottom-r p > a{
+        font-size: 0.5rem;
+    }
+    
+    .f-inner-txt9 p > img{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .f-inner-txt9 a{
+        display: inline-block;
+        line-height: 20px;
+    }
+    
+    .f-inner-txt9 p{
+        line-height: 20px;
+    }   
+
+} /* 959 */
+
+
+/* 756px */
+@media (max-width:756px){
+    .header-area{
+        height: 60px;
+        justify-content: space-between;
+    }
+
+    nav{
+        height: 60px;
+        display: none;
+    }
+
+    .header-area .jeep-logo{
+        width: 15%;
+        margin-left: 42%;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    #hamburger{
+        display: none;
+    }
+
+    #hamburger{
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    #hamburger span{
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #222;
+        transition: 0.3s;
+    }
+
+    #hamburger span:nth-child(1){
+        top: 0;
+    }
+
+    #hamburger span:nth-child(2){
+        top: 50%;
+    }
+
+    #hamburger span:nth-child(3){
+        top: 100%;
+    }
+
+    #hamburger.active span:nth-child(1){
+        transform: rotate(45deg);
+        top: 50%;
+    }
+    
+    #hamburger.active span:nth-child(2){
+        opacity: 0;
+    }
+    
+    #hamburger.active span:nth-child(3){
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+
+    .sub-menu-box-m{
+        width: 80%;
+        height: 35%;
+        position: absolute;
+        top: 12%;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: rgba(34, 34, 34, 0.89);
+        z-index: 9999;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .sub-menu-box-m.active{
+        opacity: 1;
+    }
+
+    .menu-m{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    
+
+    .menu-m li{
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .menu-m li a{
+        font-size: 1rem;
+        color: #fff;
+    }
+
+    .slider-mask{
+        width: 50%;
+        height: 17%;
+        top: 95%;
+    }
+
+    .slider-content-box{
+        width: 100% !important;
+        height: 50% !important;
+    }
+
+    .box1{
+        width: 100%;
+        height: 100%;
+        background: url(../img/main-banner-m.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }   
+    
+    .box2{
+        width: 100%;
+        height: 100%;
+        background: url(../img/main-banner2-m.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }   
+    
+    
+    .box3{
+        width: 100%;
+        height: 100%;
+        background: url(../img/main-banner3-m.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }   
+    
+    .box4{
+        width: 100%;
+        height: 100%;
+        background: url(../img/main-banner4-m.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }   
+    
+    .main-bg-slider .box1{
+
+        background: url(../img/main-banner-m_bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .main-bg-slider .box2{
+        background: url(../img/main-banner2-m_bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .main-bg-slider .box3{
+        background: url(../img/main-banner3-m_bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .main-bg-slider .box4{
+        background: url(../img/main-banner4-m_bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+
+    /* main-banner-txt-box */
+    .box{
+        margin: 75px auto 0;
+    }
+
+    .box li h3{
+        font-size: 1.5rem;
+    }
+    
+    .box li p{
+        font-size: 0.875rem;
+    }
+    
+    .btn-box a{
+        font-size: 0.75rem;
+    }
+
+    .btn-l, .btn-r{
+        width: 40%;
+    }
+
+
+    /* sec-1 */
+    .sec1-container{
+        width: 100%;
+        height: auto;
+    }
+
+    .sec1-top-txt{
+        width: 60%;
+        height: 160px;
+    }
+
+    .jeep-service-content{
+        width: 85%;
+        height: 80%;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .jeep-service-inner{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .inner-box{
+        width: 90%;
+        height: 300px;
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .inner-box:hover{
+        transform: none;
+    }
+
+    /* sec2 */
+    .sec2-container{
+        height: auto;
+    }
+
+    .sec2-top-txt{
+        width: 70%;
+        height: 160px;
+    }
+
+    .sec2-mask{
+        width: 80%;
+        height: 90%;
+        margin-top: 0;
+    }
+
+    .auto-slider-wrap{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .in-auto-slider{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .in-auto-slider:nth-child(1),
+    .in-auto-slider:nth-child(2),
+    .in-auto-slider:nth-child(3){
+        margin-top: 30px;
+    }
+
+    .in-auto-slider:nth-child(4),
+    .in-auto-slider:nth-child(5),
+    .in-auto-slider:nth-child(6),
+    .in-auto-slider:nth-child(7){
+        display: none;
+    }
+
+    .in-auto-slider:hover{
+        transform: none;
+    }
+
+    .in-auto-slider .btn{
+        width: 35%;
+        height: 25%;
+        padding: 13px;
+    }
+
+    input[name='tabmenu']{
+        display: none;
+    }
+
+    .sec2-btn{
+        display: none;
+    }
+
+    /* sec3 */
+    /* sec-3 */
+    .sec3-container{
+        height: 1000px;
+    }
+
+    .sec3-top-txt{
+        top: 7%;
+    }
+
+    .sec3-img-box{
+        top: 42%;
+        width: 100%;
+        height: 55%;
+    }
+
+    .sec3-txt-mask{
+        width: 100%;
+        height: 20%;
+        top: 85.5%;
+        left: 50%;
+    }
+
+    .sec3-txt-box{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        justify-content: space-evenly;
+    }
+
+
+    .sec3-txt-box h3{
+        margin-top: 0;
+    }
+
+
+    .sec3-txt-box button{
+        width: 20%;
+        height: 30%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+
+    /* footer */
+
+    .footer-container{
+        height: 650px;
+
+    }
+    .footer-wrap{
+        height: 95%;
+    }
+
+    .footer-left{
+        display: none;
+    }
+
+    .footer-right{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-right p{
+        display: none;
+        font-size: 0;
+    }
+
+    .footer-top-r{
+        width: 80%;
+        flex-direction: column;
+        height: 50%;
+        text-align: center;
+        border: none;
+    }
+
+    .footer-top-r .f-inner-txt{
+        padding-bottom: 15px;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(221, 221, 221, 0.295);
+    }
+
+    .footer-bottom-r{
+        width: 80%;
+        flex-direction: column;
+        height: 30%;
+        text-align: center;
+        border: none;
+        margin: 0;
+    }
+
+    .footer-bottom-r .f-inner-txt{
+        padding-bottom: 15px;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(221, 221, 221, 0.295);
+    }
+
+    .f-inner-txt9{
+        display: none;
+    }
+
+} /* 756px */
+
+
+
+
+/* 500px */
+@media (max-width: 500px){
+    .header-area{
+        height: 55px;
+    }
+
+    nav{
+        height: 55px;
+    }
+
+    .header-area .jeep-logo{
+        width: 20%;
+        margin-left: 40%;
+    }
+
+    
+    #hamburger{
+        display: inline-block;
+        width: 20px;
+        height: 17px;
+        position: relative;
+        cursor: pointer;
+    }
+
+
+    .sub-menu-box-m{
+        top: 11.5%;
+    }
+
+
+    .menu-m li a{
+        font-size: 0.85rem;
+        color: #fff;
+    }
+
+    .slider-mask{
+        width: 70%;
+        height: 20%;
+        top: 98%;
+    }    
+
+       /* main-banner-txt-box */
+    .box{
+        margin: 65px auto 0;
+    }
+
+    .box li h3{
+        font-size: 1.2rem;
+    }
+    
+    .box li p{
+        font-size: 0.75rem;
+    }
+    
+    .btn-box a{
+        font-size: 0.75rem;
+    }
+
+    .btn-box{
+        width: 50%;
+    }
+
+    .btn-l, .btn-r{
+        width: 70%;
+    }
+
+    /* sec-1 */
+    .sec1-container{
+        justify-content: space-evenly;
+        padding: 40px;
+    }
+
+    .sec1-top-txt{
+        width: 85%;
+        margin-top: 20px;
+    }
+
+    .jeep-service-inner{
+        width: 100%;
+    }
+
+    .inner-box{
+        box-shadow: 0 0 15px rgba(34, 34, 34, 0.653);
+        margin-right: 0;
+    }
+
+    /* sec-2 */
+
+    .sec2-container{
+        padding: 60px;
+    }
+    .sec2-top-txt{
+        width: 110%;
+        height: 150px;
+    }
+
+    .sec2-mask{
+        width: 100%;
+    }
+
+    .in-auto-slider .btn{
+        width: 45%;
+        height: 20%;
+    }
+
+    /* sec-3 */
+    .sec3-container{
+        height: 1000px;
+    }
+
+    .sec3-top-txt{
+        top: 7%;
+    }
+
+    .sec3-img-box{
+        top: 42%;
+        width: 100%;
+        height: 55%;
+    }
+
+    .sec3-txt-mask{
+        width: 100%;
+        height: 20%;
+        top: 85.5%;
+        left: 50%;
+    }
+
+    .sec3-txt-box{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        justify-content: space-evenly;
+    }
+
+
+    .sec3-txt-box h3{
+        margin-top: 0;
+    }
+
+
+    .sec3-txt-box button{
+        width: 30%;
+        height: 30%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+}/* 500px */
+
+/* 375px */
+
+@media (max-width:375px){
+    .header-area{
+        height: 50px;
+    }
+
+    nav{
+        height: 50px;
+    }
+
+    .header-area .jeep-logo{
+        width: 25%;
+        margin-left: 37%;
+    }
+
+    .sub-menu-box-m{
+        top: 11%;
+    }
+
+
+    .menu-m li a{
+        font-size: 0.75rem;
+        color: #fff;
+    }
+
+    .slider-mask{
+        width: 90%;
+    }
+
+    .slider-btn{
+        display: none;
+    }
+
+    /* main-banner-txt-box */
+    .box{
+        margin: 65px auto 0;
+        height: 20%;
+    }
+
+    .box li h3{
+        font-size: 1.1rem;
+    }
+    
+    .box li p{
+        font-size: 0.688rem;
+    }
+    
+    .btn-box a{
+        font-size: 0.688rem;
+    }
+
+    .btn-box{
+        width: 65%;
+    }
+
+    .btn-l, .btn-r{
+        width: 90%;
+        height: 100%;
+    }
+
+    /* sec1 */
+    .sec1-container{
+        height: auto;
+        padding: 25px;
+    }
+
+    .sec1-top-txt{
+        width: 95%;
+        height: 120px;
+    }
+
+    .jeep-service-content{
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .inner-box{
+        width: 90%;
+        margin-right: 0;
+    }
+
+    .inner-box .inner-txt {
+        height: 50px;
+    }
+
+    /* sec2 */
+    .sec2-container{
+        height: auto;
+        padding: 40px;
+        
+    }
+
+    .auto-slider-wrap{
+        margin-left: 0;
+    }
+    .in-auto-slider{
+        margin-right: 0;
+    }
+
+    .in-auto-slider .btn{
+        width: 52%;
+        padding: 14px;
+    }
+    
+
+    .sec2-top-txt{
+        width: 100%;
+        height: 150px;
+        margin-top: 20px;
+    }
+
+
+    .sec2-top-txt p{
+        font-size: 0.35rem;
+    }
+
+
+    .sec2-mask{
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* sec3 */
+
+    .sec3-txt-box button{
+        width: 35%;
+    }
+
+    .sec3-img-box{
+        background: url(../이미지/jeep-camp_m.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+}/* 375 */

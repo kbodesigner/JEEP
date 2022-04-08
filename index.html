@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>JEEP</title>
+</head>
+<body>
+       <!-- 상단이동버튼 -->
+       <div class="top-btn">
+            <img src="./이미지/top-btn.svg" alt="">
+        </div>
+
+
+    <div id="wrap">
+        <section class="main section">
+            <div class="container">
+                <header class="header-area">
+                    <a href="#none" class="jeep-logo">
+                        <img src="./이미지/지프로고.svg" alt="">
+                    </a>
+
+                    <!-- menu -->
+                    <nav>
+                        <ul class="menu">
+                            <li data-alt="tab1">
+                                <a href="#none">모델소개</a>
+                            </li>
+                            <li data-alt="tab2">
+                                <a href="#none">구입문의</a>
+                            </li>
+                            <li data-alt="tab3">
+                                <a href="#none">주행성능</a>
+                            </li>
+                            <li data-alt="tab4">
+                                <a href="#none">JEEP LIFE</a>
+                            </li>
+                            <li data-alt="tab5">
+                                <a href="#none">서비스</a>
+                            </li>
+                        </ul>
+    
+                        <!-- icon -->
+                        <ul class="icon-box">
+                            <li>
+                                <a href="#none">
+                                    <svg class="user" xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none"stroke="#222222">
+                                        <path d="M27.1252 28.1147C26.4985 26.3605 25.1175 24.8104 23.1964 23.7048C21.2753 22.5993 18.9215 22 16.5 22C14.0785 22 11.7247 22.5993 9.80363 23.7048C7.88254 24.8104 6.50154 26.3605 5.87482 28.1147" stroke-width="1.5" stroke-linecap="round"/>
+                                        <circle cx="16.5" cy="11" r="5.5" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>                                </a>
+                            </li>
+                            <li>
+                                <a href="#none">
+                                    <svg class="shop-bag" xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none" stroke="#222222" >
+                                        <path d="M11 11L11 9.625C11 6.58743 13.4624 4.125 16.5 4.125V4.125C19.5376 4.125 22 6.58743 22 9.625L22 11" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M20.625 19.25V16.5" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M12.375 19.25V16.5" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M5.5 15C5.5 13.1144 5.5 12.1716 6.08579 11.5858C6.67157 11 7.61438 11 9.5 11H23.5C25.3856 11 26.3284 11 26.9142 11.5858C27.5 12.1716 27.5 13.1144 27.5 15V20.875C27.5 24.6462 27.5 26.5319 26.3284 27.7034C25.1569 28.875 23.2712 28.875 19.5 28.875H13.5C9.72876 28.875 7.84315 28.875 6.67157 27.7034C5.5 26.5319 5.5 24.6462 5.5 20.875V15Z" stroke-width="1.5"/>
+                                        </svg>                                </a>
+                            </li>
+                            <li>
+                                <a href="#none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none" stroke="#222222">
+                                        <circle cx="16.5" cy="16.5" r="12.375" stroke-width="1.5"/>
+                                        <ellipse cx="16.885" cy="24.1725" rx="1.0725" ry="1.0725"/>
+                                        <path d="M16.5 22V20.8219C16.5 19.8399 16.9908 18.9228 17.8079 18.378L18.6308 17.8295C19.8767 16.9989 20.625 15.6006 20.625 14.1033V13.75C20.625 11.4718 18.7782 9.625 16.5 9.625V9.625C14.2218 9.625 12.375 11.4718 12.375 13.75V13.75"  stroke-width="1.5"/>
+                                        </svg>                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- m-menu-btn -->
+                    <a href="#none" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </header>
+
+
+                <!-- sub-menu -->
+                <div class="sub-menu-box">
+                    <ul id="tab1" class="sub-menu">
+                        <li>
+                            <h3>ALL-NEW GRAND CHEROKEE L</h3>
+                            <p>A LEGACY EXTENDED</p>
+                        </li>
+                        <li>
+                            <h3>WRANGLER 4XE</h3>
+                            <p>THE FUTURE IS NOW</p>
+                        </li>
+                        <li>
+                            <h3>GLADIATOR</h3>
+                            <p>FOR THE THRILL SEEKERS ONLY</p>
+                        </li>
+                        <li>
+                            <h3>WRANGLER</h3>
+                            <p>RESET THE LIMITS</p>
+                        </li>
+                        <li>
+                            <h3>GRAND CHEROKEE</h3>
+                            <p>THE ABSOLUTE EVOLUTION</p>
+                        </li>
+                        <li>
+                            <h3>CHEROKEE</h3>
+                            <p>THE WORLD COMES CLOSER</p>
+                        </li>
+                        <li>
+                            <h3>RENEGADE</h3>
+                            <p>BORN TO BE WILD</p>
+                        </li>
+                        <li>
+                            <h3>COMPASS</h3>
+                            <p>FOR URBAN ADCENTURES</p>
+                        </li>
+
+                        <!-- 해당 메뉴에 마우스 호버했을때, 해당 내용 이미지 보이게 만들기 -->
+                    </ul>
+                    <ul id="tab2" class="sub-menu">
+                        <li> <h3> 프로모션 </h3></li>
+                        <li> <h3> 비대면 구매신청 하기 </h3></li>
+                        <li> <h3> 시승신청 </h3></li>
+                        <li> <h3> 견적내기 </h3></li>
+                        <li> <h3> 모델 비교하기 </h3></li>
+                        <li> <h3> 전시장/서비스센터 검색 </h3></li>
+                        <li> <h3> 카탈로그 다운로드 </h3></li>
+                        <li> <h3> 악세서리 카탈로그 </h3></li>
+                    </ul>
+
+                    <ul id="tab3" class="sub-menu">
+                        <li>
+                            <h3>TRAIL RATED</h3>
+                            <p>Trail Rated® 배지는 쉽게 받을 수 있는 것은 아닙니다. 얻어낸 것입니다. 모든 Trail Rated® 4x4 Jeep® 차량은 5가지 범주인 트랙션, 도하능력, 기동성, 아티큘레이션, 최저지상고에서 엄격한 테스트를 통과했습니다.</p>
+                        </li>
+                        <li>
+                            <h3>4X4 SYSTEMS</h3>
+                            <p>Choose a Jeep® Brand 4x4 to confidently Go Anywhere. Do Anything.®</p>
+                        </li>
+                        <li>
+                            <h3>FAQ & GLOSSARY</h3>
+                            <p>Jeep 브랜드의 차량은 오프로드용으로 설계되고 제작됩니다. 거친 오프로드의 삶에 친숙해지도록FAQ와 함께 용어를 설명해드립니다.</p>
+                        </li>
+                    </ul>
+
+                    <ul id="tab4" class="sub-menu">
+                        <li> <h3>BRAND STORY</h3></li>
+                        <li> <h3>BRAND HISTORY</h3></li>
+                        <li> <h3>PRESS ROOM</h3></li>
+                        <li> <h3>PARTNERSHIPS</h3></li>
+                    </ul>
+
+                    <ul id="tab5" class="sub-menu">
+                        <li> <h3>전시장/서비스센터 검색</h3> </li>
+                        <li> <h3>JEEP연장 보증 프로그램</h3> </li>
+                        <li> <h3>JEEP CARE</h3> </li>
+                        <li> <h3>고객지원 센터</h3> </li>
+                        <li> <h3>자동차 교환환불제도 안내</h3> </li>
+                    </ul>
+                </div>
+
+                <!-- sub menu-mobile -->
+                <div class="sub-menu-box-m">
+                        <ul class="menu-m">
+                            <li>
+                                <a href="#none">모델소개</a>
+                            </li>
+                            <li>
+                                <a href="#none">구입문의</a>
+                            </li>
+                            <li>
+                                <a href="#none">주행성능</a>
+                            </li>
+                            <li>
+                                <a href="#none">JEEP LIFE</a>
+                            </li>
+                            <li>
+                                <a href="#none">서비스</a>
+                            </li>
+                        </ul>
+                </div>
+
+                <div class="mask swiper main_swiper">
+                    <!-- mask - slider -->
+                    <ul class="slider swiper-wrapper">
+                        <li class="swiper-slide in-slider box1">
+                            <ul class="box box1-txt">
+                                <li>
+                                    <h3>WRANGLER 4XE</h3>
+                                    <p>엔진과 두 개의 전기 모터가 발휘하는 더 강력한 토크</p>
+                                </li>
+
+                                <ul class="btn-box">
+                                    <li class="btn-l">
+                                        <a href="#none">모델 바로가기</a>
+                                    </li>
+                                    <li class="btn-r">
+                                        <a href="#none">시승 신청하기</a>
+                                    </li>
+                                </ul>
+                            </ul>
+
+
+                        </li>
+                        <li class="swiper-slide in-slider box2">
+                            <ul class="box box2-txt">
+                                <li>
+                                    <h3>ALL-NEW GRNAD CHEROKEE L</h3>
+                                    <p>명작의 진화, 올 뉴 그랜드 채로키 L</p>
+                                </li>
+
+                                <ul class="btn-box">
+                                    <li class="btn-l">
+                                        <a href="#none">모델 바로가기</a>
+                                    </li>
+                                    <li class="btn-r">
+                                        <a href="#none">시승 신청하기</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="swiper-slide in-slider box3">
+                            <ul class="box box3-txt">
+                                <li>
+                                    <h3>RENEGADE</h3>
+                                    <p>새로운 스타일로 재탄생한 Renegade의 넘치는 개성과 가치를 경험해 보세요.</p>
+                                </li>
+
+                                <ul class="btn-box">
+                                    <li class="btn-l">
+                                        <a href="#none">모델 바로가기</a>
+                                    </li>
+                                    <li class="btn-r">
+                                        <a href="#none">시승 신청하기</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="swiper-slide in-slider box4">
+                            <ul class="box box4-txt ">
+                                <li>
+                                    <h3>CHEROKEE</h3>
+                                    <p>JEEP CHEROKEE만의 스타일과 자신감으로 앞서 나가세요.</p>
+                                </li>
+
+                                <ul class="btn-box">
+                                    <li class="btn-l">
+                                        <a href="#none">모델 바로가기</a>
+                                    </li>
+                                    <li class="btn-r">
+                                        <a href="#none">시승 신청하기</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+                    <!-- 추가 -->
+                    <div class="slider-btn">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+            </div>
+
+                <!-- main-bg는 이미지에 black 0.7 transparent 준 이미지로 slider 적용 -->
+                <!-- auto-slider로 진행 -->
+            <div class="main-bg-mask sub_swiper">
+                    <ul class="main-bg-slider swiper-wrapper">
+                            <li class="swiper-slide in-slider box1"></li>
+                            <li class="swiper-slide in-slider box2"></li>
+                            <li class="swiper-slide in-slider box3"></li>
+                            <li class="swiper-slide in-slider box4"></li>
+                    </ul>
+            </div>
+        </section>
+    
+
+        
+
+        <!-- section1 -->
+        <section class="jeep-service section">
+            <div class="sec1-container">
+                <div class="sec1-top-txt">
+                    <div class="inner-txt">
+                        <h3>JEEP SERVICE</h3>
+                        <p>지프 차량을 구매하는 모든 고객분들에게 제공되는 <br>
+                            Jeep만의 최고의 서비스를 받아보세요.</p>
+                    </div>
+                </div>
+
+                <div class="jeep-service-content">
+                    <ul class="jeep-service-inner">
+                            <li class="inner-box">
+                                <div class="inner-img1"></div>
+
+                                <div class="inner-txt">
+                                    <a href="#none">멤버십 가입하기</a>
+                                </div>
+                            </li>
+
+                            <li class="inner-box">
+                                <div class="inner-img2"></div>
+
+                                <div class="inner-txt">
+                                    <a href="#none">시승신청</a>
+                                </div>
+                            </li>
+
+                            <li class="inner-box">
+                                <div class="inner-img3"></div>
+
+                                <div class="inner-txt">
+                                    <a href="#none">견적내기</a>
+                                </div>
+                            </li>
+                            <li class="inner-box">
+                                <div class="inner-img4"></div>
+
+                                <div class="inner-txt">
+                                    <a href="#none">전시장 찾기</a>
+                                </div>
+                            </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- section2 -->
+        <section class="jeep-vehicles section">
+            <div class="sec2-container">
+
+                <div class="sec2-top-txt">
+                    <div class="inner-txt">
+                        <h3>JEEP VEHICLES</h3>
+                        <p>완벽한 JEEP의 디자인은 외양과 <br> 기능 모두에서 가치와 아름다움을 보여줍니다. <br> 동급 최고 품격의 자동차로서 타의 추종을 불허합니다.</p>
+                    </div>
+                </div>
+
+                <input type="radio" name="tabmenu" id="tab-1" checked>
+                <input type="radio" name="tabmenu" id="tab-2" >
+
+                <div class="sec2-mask">
+                    <div class="slider-wrap-box">
+                        <div class="auto-slider-wrap sec2-wrap1">
+                            <div class="in-auto-slider">
+                                <h3>ALL-NEW GRAND CHEROKEE L</h3>
+
+                                <a href="#none" class="sec2-img">
+                                    <img src="./이미지/model1.png" alt="">
+                                </a>
+
+                                <p>￦62,900,000 ~</p>
+
+                                <button class="btn">
+                                    <a href="#none">자세히 보러가기</a>
+                                </button>
+                            </div>
+
+                            
+                            <div class="in-auto-slider">
+                                <h3>GLADIATOR</h3>
+
+                                <a href="#none" class="sec2-img">
+                                    <img src="./이미지/model2.png" alt="">
+                                </a>
+
+                                <p>￦70,700,000</p>
+
+                                <button class="btn">
+                                    <a href="#none">자세히 보러가기</a>
+                                </button>
+                            </div>
+
+                            <div class="in-auto-slider">
+                                <h3>WRANGLER</h3>
+
+                                <a href="#none" class="sec2-img">
+                                    <img src="./이미지/MODEL3.png" alt="">
+                                </a>
+
+                                <p>￦63,400,000</p>
+
+                                <button class="btn">
+                                    <a href="#none">자세히 보러가기</a>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="auto-slider-wrap sec2-wrap2">
+                                <div class="in-auto-slider">
+                                    <h3>GRAND CHEROKEE</h3>
+
+                                    <a href="#none" class="sec2-img">
+                                        <img src="./이미지/MODEL4.png" alt="">
+                                    </a>
+
+                                    <p>￦62,900,000</p>
+
+                                    <button class="btn">
+                                        <a href="#none">자세히 보러가기</a>
+                                    </button>
+                                </div>
+
+                                <div class="in-auto-slider">
+                                    <h3>CHEROKEE</h3>
+
+                                    <a href="#none" class="sec2-img">
+                                        <img src="./이미지/MODEL5.png" alt="">
+                                    </a>
+
+                                    <p>￦49,900,000</p>
+
+                                    <button class="btn">
+                                        <a href="#none">자세히 보러가기</a>
+                                    </button>
+                                </div>
+
+                                <div class="in-auto-slider">
+                                    <h3>RENEGADE</h3>
+
+                                    <a href="#none" class="sec2-img">
+                                        <img src="./이미지/MODEL6.png" alt="">
+                                    </a>
+
+                                    <p>￦38,100,000</p>
+
+                                    <button class="btn">
+                                        <a href="#none">자세히 보러가기</a>
+                                    </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="sec2-arrow-btn">
+                    <img class="arrs" src="./이미지/arrow-btn-prev.svg" alt="">
+                    <img src="./이미지/arrow-btn-next.svg" alt="">
+                </div> -->
+
+                <div class="sec2-btn">
+                    <label for="tab-1"></label>
+                    <label for="tab-2"></label>
+                </div>
+            </div>
+        </section>
+
+        <!-- section3 -->
+        <section class="jeep-camp section">
+            <div class="sec3-container">
+                <div class="sec3-top-txt">
+                    <h3>JEEP CAMP</h3>
+                </div>
+
+                <div class="sec3-img-box"></div>
+
+                <div class="sec3-txt-mask">
+                    <div class="sec3-txt-box">
+                        <h3>JEEP CAMP 2021</h3>
+
+                        <p>지난 5월, 한 달여 간 강원도 양양에서 진행된 <br>
+                            국내 최대 오프로드 축제 Jeep Camp 2021</p>
+
+                        <button>
+                            <a href="#none">
+                                자세한 내용 보기
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="footer section">
+            <div class="footer-container">
+                <!-- FOOTER-LEFT -->
+                <div class="footer-wrap">
+                    <div class="footer-left">
+                        <div class="footer-top-l">
+                            <a href="#none">
+                                <img class="footer-top-img" src="./이미지/footer-logo.svg" alt="">
+                            </a>
+                            <p>©2021 Stellantis. All Rights Reserved.
+                                Chrysler, Jeep 및 FIAT 로고는 
+                                Stellantis의 등록 상표입니다.</p>
+                        </div>
+
+                        <div class="footer-bottom-l">
+                            <input type="search" placeholder="검색할 내용을 입력하세요">
+                            <a href="#none">FIND YOUR COUNTRY</a>
+                            <a href="#none">HOME</a>
+                            <a href="#none">CONTANCT US</a>
+                            <a href="#none">SITE MAP</a>
+                        </div>
+                    </div>
+
+                    <!-- FOOTER-RIGHT -->
+                    <div class="footer-right">
+                        <!-- footer-top -->
+                        <div class="footer-top-r">
+                            <div class="f-inner-txt f-inner-txt1">
+                                <h1><a href="#none">모델</a></h1>
+                                <p><a href="#none">All-New Grand Cherokee L</a></p>
+                                <p><a href="#none">Wrangler 4xe</a></p>
+                                <p><a href="#none">Gladiator</a></p>
+                                <p><a href="#none">Wrangler</a></p>
+                                <p><a href="#none">Grand Cherokee</a></p>
+                                <p><a href="#none">Cherokee</a></p>
+                                <p><a href="#none">Renegade</a></p>
+                            </div>
+
+                            <div class="f-inner-txt f-inner-txt2">
+                                <h1><a href="#none">구입문의</a></h1>
+                                <p><a href="#none">시승신청</a></p>
+                                <p><a href="#none">세일즈 프로모션</a></p>
+                                <p><a href="#none">전시장 검색</a></p>
+                                <p><a href="#none">카탈로그 다운로드</a></p>
+                            </div>
+
+                            <div class="f-inner-txt f-inner-txt3">
+                                <h1><a href="#none">주행성능</a></h1>
+                                <p><a href="#none">TRAIL RATED</a></p>
+                                <p><a href="#none">4X4 STSYEMS</a></p>
+                                <p><a href="#none">FAQ AND GLOSSARY</a></p>
+                            </div>
+
+                            <div class="f-inner-txt f-inner-txt4">
+                                <h1><a href="#none">JEEP OWNERS</a></h1>
+                                <p><a href="#none">JEEP STORY</a></p>
+                                <p><a href="#none">JEEP CAMP</a></p>
+                                <p><a href="#none">JEEP CARE</a></p>
+                            </div>
+
+                            <div class="f-inner-txt f-inner-txt5">
+                                <h1><a href="#none">LEGAL</a></h1>
+                                <p>Privacy Policy</p>
+                                <p>Legal, safety, and <br>
+                                    trademark information</p>
+                            </div>
+                        </div>
+
+                        <div class="footer-bottom-r">
+                            <div class="f-inner-txt f-inner-txt6">
+                                <h1><a href="#none">BRAND STORY</a></h1>
+                                <p><a href="#none">BRAND HISTORY</a></p>
+                                <p><a href="#none">PRESSROOM</a></p>
+                                <p><a href="#none">PARTNERSHIPS</a></p>
+                                <p><a href="#none">VIDEO</a></p>
+                            </div>
+
+                            <div class="f-inner-txt f-inner-txt7">
+                                <h1><a href="#none">JEEP CAMP</a></h1>
+                                <p><a href="#none">Jeep Camp 2021</a></p>
+                                <p><a href="#none">Jeep Camp 2019</a></p>
+                                <p><a href="#none">Jeep Camp 2018</a></p>
+                                <p><a href="#none">Jeep Camp 2017</a></p>
+                                <p><a href="#none">Jeep Camp 2016</a></p>
+                                <p><a href="#none">Jeep Camp 2015</a></p>
+                                <p><a href="#none">Jeep Camp 2014</a></p>
+                                <p><a href="#none">Jeep Camp 2013</a></p>
+                            </div>
+
+                            <div class="f-inner-txt f-inner-txt8">
+                                <h1><a href="#none">서비스</a></h1>
+                                <p><a href="#none">전시장/서비스센터 검색</a></p>
+                                <p><a href="#none">JEEP CARE</a></p>
+                                <p><a href="#none">고객지원 센터</a></p>
+                                <p><a href="#none">Jeep 부품 가격정보</a></p>
+                                <p><a href="#none">Chysler 부품 가격정보</a></p>
+                                <p><a href="#none">Fiat 부품 가격정보</a></p>
+                                <p><a href="#none">부품취급설명서 다운로드</a></p>
+                                <p><a href="#none">자동차 결함 신고센터</a></p>
+                                <p><a href="#none">정비정보</a></p>
+                            </div>
+
+                            <div class="f-inner-txt f-inner-txt9">
+                                
+                                <h1><a href="#none">FOLLOW US</a></h1>
+
+                                <div class="facebook-txt">
+                                    <p><img src="./이미지/Facebook - Negative.svg" alt=""></p>
+                                    <p><a href="#none">@JeepKorea</a></p>
+                                </div>
+
+                                <div class="instagram-txt">
+                                    <p><img src="./이미지/Instagram - Negative.svg" alt=""></p>
+                                    <p><a href="#none">@jeepkorea</a></p>
+                                </div>
+
+                                <div class="youtube-txt">
+                                    <p><img src="./이미지/YouTube - Negative.svg" alt=""></p>
+                                    <p><a href="#none">Jeep Korea</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js"></script>
+    <script src="./js/fullpage.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</body>
+</html>
